@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_clone/Sections/statusSection.dart';
 import 'package:flutter_facebook_clone/Widgets/appBarWidget.dart';
+import '';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -31,6 +33,11 @@ class Home extends StatelessWidget {
                 buttonAction: () {
                   print('go to messanger');
                 })
+          ],
+        ),
+        body: ListView(
+          children: [
+            StatusSection(),
           ],
         ),
       ),
