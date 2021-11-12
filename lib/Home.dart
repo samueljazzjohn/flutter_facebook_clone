@@ -2,14 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook_clone/Sections/headerSectionButtons.dart';
 import 'package:flutter_facebook_clone/Sections/roomSections.dart';
 import 'package:flutter_facebook_clone/Sections/statusSection.dart';
-import 'package:flutter_facebook_clone/Widgets/appBarWidget.dart';
-import '';
+import 'package:flutter_facebook_clone/Sections/storySection.dart';
+import 'package:flutter_facebook_clone/Widgets/circularButton.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+      const Widget thinDivider=const Divider(
+              thickness: 1,
+              color:Colors.grey,
+            );
+      Widget thickDivider=Divider(
+              thickness: 10,
+              color: Colors.grey[300],
+            );
+
     return MaterialApp(
       title: 'facebook',
       theme: ThemeData(
@@ -28,12 +37,12 @@ class Home extends StatelessWidget {
             ),
           ),
           actions: [
-            AppBarWidget(
+            CircularButton(
                 buttonIcon: Icons.search,
                 buttonAction: () {
                   // print('Go to search page');
                 }),
-            AppBarWidget(
+            CircularButton(
                 buttonIcon: Icons.message,
                 buttonAction: () {
                   // print('go to messanger');
@@ -43,20 +52,13 @@ class Home extends StatelessWidget {
         body: ListView(
           children: [
             const  StatusSection(),
-            const Divider(
-              thickness: 1,
-              color:Colors.grey,
-            ),
+            thinDivider,
             HeaderSectionButtons(),
-            Divider(
-              thickness: 10,
-              color: Colors.grey[300],
-            ),
+            thickDivider,
             const RoomSection(),
-            Divider(
-              thickness: 10,
-              color: Colors.grey[300],
-            ),
+            thickDivider,
+            StorySection(),
+            thickDivider,
           ],
         ),
       ),
