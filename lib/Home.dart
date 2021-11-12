@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_clone/Sections/headerSectionButtons.dart';
+import 'package:flutter_facebook_clone/Sections/roomSections.dart';
 import 'package:flutter_facebook_clone/Sections/statusSection.dart';
 import 'package:flutter_facebook_clone/Widgets/appBarWidget.dart';
 import '';
@@ -11,11 +12,14 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'facebook',
+      theme: ThemeData(
+        primarySwatch:Colors.blue,
+      ),
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
-          title: Text(
+          title:const Text(
             'facebook',
             style: TextStyle(
               color: Colors.blue,
@@ -27,23 +31,28 @@ class Home extends StatelessWidget {
             AppBarWidget(
                 buttonIcon: Icons.search,
                 buttonAction: () {
-                  print('Go to search page');
+                  // print('Go to search page');
                 }),
             AppBarWidget(
                 buttonIcon: Icons.message,
                 buttonAction: () {
-                  print('go to messanger');
+                  // print('go to messanger');
                 })
           ],
         ),
         body: ListView(
           children: [
-            StatusSection(),
-            Divider(
+            const  StatusSection(),
+            const Divider(
               thickness: 1,
-              color: Colors.grey[300],
+              color:Colors.grey,
             ),
             HeaderSectionButtons(),
+            Divider(
+              thickness: 10,
+              color: Colors.grey[300],
+            ),
+            const RoomSection(),
             Divider(
               thickness: 10,
               color: Colors.grey[300],

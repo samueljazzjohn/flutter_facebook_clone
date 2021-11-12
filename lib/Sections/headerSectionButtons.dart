@@ -13,13 +13,13 @@ class HeaderSectionButtons extends StatelessWidget {
       {required IconData buttonIcon,
       required Color color,
       required String buttonLabel,
-      required void buttonAction()}) {
+      required void  Function() buttonAction}) {
     return TextButton.icon(
         onPressed: buttonAction,
         icon: Icon(buttonIcon, color: color),
         label: Text(
           buttonLabel,
-          style: TextStyle(color: Colors.black, fontSize: 15),
+          style: const TextStyle(color: Colors.black, fontSize: 15),
         ));
   }
 
