@@ -4,6 +4,8 @@ import 'package:flutter_facebook_clone/Sections/roomSections.dart';
 import 'package:flutter_facebook_clone/Sections/statusSection.dart';
 import 'package:flutter_facebook_clone/Sections/storySection.dart';
 import 'package:flutter_facebook_clone/Widgets/circularButton.dart';
+import 'package:flutter_facebook_clone/Widgets/postCard.dart';
+import 'package:flutter_facebook_clone/assets.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -59,6 +61,7 @@ class Home extends StatelessWidget {
             thickDivider,
             StorySection(),
             thickDivider,
+            PostCard(displayImage: sachin, displayName: 'Sachin Tendulkar',publishedAt: '5h',postHeading: 'Run Together Better Together',post: sachinPost,),
           ],
         ),
       ),
