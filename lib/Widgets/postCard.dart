@@ -44,42 +44,46 @@ class PostCard extends StatelessWidget {
   }
 
   Widget PostCardHeader() {
-    return ListTile(
-      leading: Avatar(displayImage: displayImage, displayStatus: false),
-      title: Row(
-        children: [
-          Text(displayName),
-          SizedBox(
-            width: 5,
-          ),
-          blueTickStatus ? BlueTick() : SizedBox()
-        ],
-      ),
-      subtitle: Padding(
-        padding: const EdgeInsets.only(top: 5, bottom: 5),
-        child: Row(children: [
-          Text(publishedAt),
-          SizedBox(
-            width: 5,
-          ),
-          Icon(Icons.public, color: Colors.grey[700])
-        ]),
-      ),
-      trailing: Icon(
-        Icons.more_horiz,
-        color: Colors.grey,
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: ListTile(
+        leading: Avatar(displayImage: displayImage, displayStatus: false),
+        title: Row(
+          children: [
+            Text(displayName),
+            SizedBox(
+              width: 5,
+            ),
+            blueTickStatus ? BlueTick() : SizedBox()
+          ],
+        ),
+        subtitle: Padding(
+          padding: const EdgeInsets.only(top: 5, bottom: 5),
+          child: Row(children: [
+            Text(publishedAt),
+            SizedBox(
+              width: 5,
+            ),
+            Icon(Icons.public, color: Colors.grey[700])
+          ]),
+        ),
+        trailing: Icon(
+          Icons.more_horiz,
+          color: Colors.grey,
+        ),
       ),
     );
   }
 
   Widget postCardBody() {
     return Container(
-        padding: EdgeInsets.only(top: 10),
+        padding: postHeading!='' ? EdgeInsets.only(top: 10)
+        : EdgeInsets.only(top: 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 5.0),
+              padding: const EdgeInsets.only(left: 10.0,right: 10),
               child: Text(postHeading),
             ),
             SizedBox(height: 10),

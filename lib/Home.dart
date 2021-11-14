@@ -3,6 +3,7 @@ import 'package:flutter_facebook_clone/Sections/buttonsSection.dart';
 import 'package:flutter_facebook_clone/Sections/roomSections.dart';
 import 'package:flutter_facebook_clone/Sections/statusSection.dart';
 import 'package:flutter_facebook_clone/Sections/storySection.dart';
+import 'package:flutter_facebook_clone/Sections/suggestionSection.dart';
 import 'package:flutter_facebook_clone/Widgets/button.dart';
 import 'package:flutter_facebook_clone/Widgets/circularButton.dart';
 import 'package:flutter_facebook_clone/Widgets/postCard.dart';
@@ -90,9 +91,61 @@ class Home extends StatelessWidget {
               publishedAt: '5h',
               postHeading: 'Run Together Better Together',
               post: sachinPost,
-              likeCount:'1k',
+              likeCount:'10k',
               commentCount:'5k',
               shareCount: '5k',
+              blueTickStatus: true,
+            ),
+            thickDivider,
+            PostCard(
+              displayImage: sahal,
+              displayName: 'Sahal Abdul Samad',
+              publishedAt: '1 day ago',
+              postHeading: 'Yennum Yellow',
+              post: sahalPost,
+              likeCount:'4k',
+              commentCount:'1k',
+              shareCount: '2.5k',
+            ),
+            thickDivider,
+            PostCard(
+              displayImage: viru,
+              displayName: 'Virendra Sehwag',
+              publishedAt: 'feb 20',
+              postHeading: '',
+              post: viruPost,
+              likeCount:'10k',
+              commentCount:'2k',
+              shareCount: '3k',
+              blueTickStatus: true,
+
+            ),
+            thickDivider,
+            SuggestionSection(),
+            thickDivider,
+            PostCard(
+              displayImage: cr7,
+              displayName: 'Cristiano Ronaldo',
+              publishedAt: 'jan 13',
+              postHeading: 'Back to home',
+              post: cr7Post,
+              likeCount:'100k',
+              commentCount:'20k',
+              shareCount: '50k',
+              blueTickStatus: true,
+
+            ),
+            thickDivider,
+            PostCard(
+              displayImage: dq,
+              displayName: 'Dulquer Salman',
+              publishedAt: 'nov 2',
+              postHeading: 'Waiting...',
+              post: dqPost,
+              likeCount:'10k',
+              commentCount:'5k',
+              shareCount: '5k',
+              blueTickStatus: true,
             ),
             thickDivider,
           ],
