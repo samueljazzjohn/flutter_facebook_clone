@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_clone/Sections/buttonsSection.dart';
 import 'package:flutter_facebook_clone/Widgets/avatar.dart';
 import 'package:flutter_facebook_clone/Widgets/blueTick.dart';
+import 'package:flutter_facebook_clone/Widgets/button.dart';
 
 class PostCard extends StatelessWidget {
   final String displayImage;
@@ -8,6 +10,10 @@ class PostCard extends StatelessWidget {
   final String publishedAt;
   final String postHeading;
   final String post;
+  final String likeCount;
+  final String commentCount;
+  final String shareCount;
+  final bool blueTickStatus;
   PostCard({
     Key? key,
     required this.displayImage,
@@ -15,6 +21,10 @@ class PostCard extends StatelessWidget {
     required this.publishedAt,
     required this.postHeading,
     required this.post,
+    required this.likeCount,
+    required this.commentCount,
+    required this.shareCount,
+    this.blueTickStatus=false,
   }) : super(key: key);
 
   @override
@@ -22,8 +32,13 @@ class PostCard extends StatelessWidget {
     return Container(
       child: Column(children: [
         PostCardHeader(),
-         postCardBody(),
-         postCardFooter()
+        postCardBody(),
+        postCardFooter(),
+        Divider(
+          thickness: 1,
+          color: Colors.grey,
+        ),
+        postCardButton()
       ]),
     );
   }
@@ -37,7 +52,7 @@ class PostCard extends StatelessWidget {
           SizedBox(
             width: 5,
           ),
-          BlueTick()
+          blueTickStatus ? BlueTick() : SizedBox()
         ],
       ),
       subtitle: Padding(
@@ -75,32 +90,92 @@ class PostCard extends StatelessWidget {
 
   Widget postCardFooter() {
     return Container(
-      padding: EdgeInsets.only(top:5),
+        padding: EdgeInsets.only(top: 5),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-      Row(children: [
-        Container(
-          margin: EdgeInsets.only(left: 5),
-          width: 15,
-          height: 15,
-          decoration: BoxDecoration(
-            color: Colors.blue,
-            shape: BoxShape.circle
-          ),
-          child: Icon(Icons.thumb_up, size: 10,color: Colors.white,),
-        ),
-        SizedBox(width: 5,),
-        Text('1k Likes')
-      ]),
-      Row(
-        children: [Text('5k'),
-        SizedBox(width: 5,),
-         Text('Comments'),
-         SizedBox(width: 10,),
-          Text('10k'),
-          SizedBox(width: 5,),
-           Text('shares')],
-      )
-    ]));
+          Row(children: [
+            Container(
+              margin: EdgeInsets.only(left: 5),
+              width: 15,
+              height: 15,
+              decoration:
+                  BoxDecoration(color: Colors.blue, shape: BoxShape.circle),
+              child: Icon(
+                Icons.thumb_up,
+                size: 10,
+                color: Colors.white,
+              ),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            displayText(label: likeCount),
+            SizedBox(
+              width: 3,
+            ),
+            displayText(label: 'Like')
+          ]),
+          Row(
+            children: [
+              displayText(label: commentCount),
+              SizedBox(
+                width: 3,
+              ),
+              displayText(label: 'Comment'),
+              SizedBox(
+                width: 6,
+              ),
+              displayText(label: shareCount),
+              SizedBox(
+                width: 3,
+              ),
+              displayText(label: 'share'),
+              SizedBox(
+                width: 2,
+              ),
+              Avatar(
+                displayImage: displayImage,
+                displayStatus: false,
+                width: 30,
+                height: 30,
+              ),
+              IconButton(
+                  onPressed: () {
+                    print('More icon pressed');
+                  },
+                  icon: Icon(Icons.arrow_drop_down, color: Colors.grey[700])),
+            ],
+          )
+        ]));
+  }
+
+  Widget postCardButton() {
+    return ButtonSection(
+      buttonOne: button(
+          buttonIcon: Icons.thumb_up_alt_outlined,
+          buttonLabel: 'Like',
+          buttonAction: () {
+            print('Like Button Pressed');
+          },
+          color: Colors.grey),
+      buttonTwo: button(
+          buttonIcon: Icons.message_outlined,
+          buttonLabel: 'Comment',
+          buttonAction: () {
+            print('Comment Button Pressed');
+          },
+          color: Colors.grey),
+      buttonThree: button(
+          buttonIcon: Icons.share_outlined,
+          buttonLabel: 'Share',
+          buttonAction: () {
+            print('Share Button Pressed');
+          },
+          color: Colors.grey),
+    );
+  }
+
+  Widget displayText({label}) {
+    return Text(label);
   }
 }
