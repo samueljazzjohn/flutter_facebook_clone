@@ -1,4 +1,4 @@
-
+import 'package:flutter_facebook_clone/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_clone/Widgets/suggestionCard.dart';
 
@@ -9,7 +9,7 @@ class SuggestionSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(left:10),
-      height: 350,
+      height: 420,
       child: Column(
       crossAxisAlignment:CrossAxisAlignment.start,
       children: [
@@ -23,11 +23,15 @@ class SuggestionSection extends StatelessWidget {
             ),
           ),
         Container(
-          height: 300,
+          height: 350,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              SuggestionCard()
+              SuggestionCard(displayImage: alansam,displayName:'Alan Sam',mutualFreinds: '20',),
+              SuggestionCard(displayImage: libin,displayName:'Libin Scaria',mutualFreinds: '18'),
+              SuggestionCard(displayImage: nivedh,displayName:'Nivedh Krishna',mutualFreinds: '21'),
+              SuggestionCard(displayImage: rithul,displayName:'Rithul',mutualFreinds: '30')
+
             ],
           ),
         )

@@ -7,6 +7,10 @@ String sachin = 'assets/Images/avatar/sachin.jpg';
 String sahal = 'assets/Images/avatar/sahal.jpg';
 String sam = 'assets/Images/avatar/sam.jpg';
 String viru = 'assets/Images/avatar/viru.jpg';
+String libin = 'assets/Images/avatar/libin.jpg';
+String nivedh = 'assets/Images/avatar/nivedh.jpg';
+String rithul = 'assets/Images/avatar/rithul.jpg';
+String alansam = 'assets/Images/avatar/alansam.jpg';
 
 // Posts
 String dqPost = 'assets/Images/posts/dq_post.jpg';
