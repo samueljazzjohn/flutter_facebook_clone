@@ -9,7 +9,7 @@ class SuggestionSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(left:10),
-      height: 420,
+      height: 450,
       child: Column(
       crossAxisAlignment:CrossAxisAlignment.start,
       children: [
@@ -23,7 +23,7 @@ class SuggestionSection extends StatelessWidget {
             ),
           ),
         Container(
-          height: 350,
+          height: 390,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
